@@ -1,1 +1,44 @@
+<web-app>
+	<!-- General description of Web application -->
+	<display-name>
+		ShipYard Web Application
+	</display-name>
 
+	<description>
+		This is the Web application for running
+		the business logic in the second-tier 
+		servlet.
+	</description>
+<!-- Servlet definitions -->
+	<servlet>
+		<servlet-name>logic</servlet-name>
+		<description>
+			A servlet that handles the second-tier business logic
+		</description>
+		<servlet-class>
+			BusinessLogic
+		</servlet-class>
+
+		<init-param>
+     	<param-name>databaseDriver</param-name>
+    	 <param-value>com.mysql.cj.jdbc.Driver</param-value>
+    	</init-param>
+   		 <init-param>
+   	 		 <param-name>databaseName</param-name>
+   	 		 <param-value>jdbc:mysql://localhost:3312/project4</param-value>
+   		 </init-param>
+   		 <init-param>
+   			   <param-name>username</param-name>
+   			   <param-value>root</param-value>
+   	 	 </init-param>
+   	 	 <init-param>
+   			   <param-name>password</param-name>
+   			   <param-value>root</param-value>
+   		 </init-param>
+
+		</servlet>
+	<servlet-mapping>
+		<servlet-name>logic</servlet-name>
+		<url-pattern>/logic</url-pattern>
+	</servlet-mapping>
+</web-app>
